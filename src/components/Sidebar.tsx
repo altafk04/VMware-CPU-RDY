@@ -25,22 +25,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const navItems = [
     {
-      id: 'analyzer' as ActiveTab,
-      label: 'Analyzer',
+      id: 'calculator' as ActiveTab,
+      label: 'Manual Calc',
       icon: Activity,
-      badge: 'Core',
+      badge: 'Calc',
+    },
+    {
+      id: 'vcenter' as ActiveTab,
+      label: 'vCenter Data',
+      icon: Server,
+      badge: 'Live',
+    },
+    {
+      id: 'analyzer' as ActiveTab,
+      label: 'Dashboard',
+      icon: Activity,
     },
     {
       id: 'historical-trends' as ActiveTab,
-      label: 'Historical Trends',
+      label: 'Trends',
       icon: History,
-      badge: '24h',
     },
     {
       id: 'best-practices' as ActiveTab,
-      label: 'Best Practices',
+      label: 'Playbook',
       icon: ShieldCheck,
-      badge: 'KB',
     },
     {
       id: 'settings' as ActiveTab,

@@ -41,7 +41,7 @@ export interface HistoricalPoint {
   readyMs: number;
 }
 
-export type ActiveTab = 'analyzer' | 'historical-trends' | 'best-practices' | 'settings';
+export type ActiveTab = 'analyzer' | 'calculator' | 'vcenter' | 'historical-trends' | 'best-practices' | 'settings';
 
 export interface AlertNotification {
   id: string;

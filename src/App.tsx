@@ -8,9 +8,11 @@ import { HistoricalTrendsView } from './components/HistoricalTrendsView';
 import { BestPracticesView } from './components/BestPracticesView';
 import { SettingsView } from './components/SettingsView';
 import { TopologyModal } from './components/TopologyModal';
+import { ManualCalculator } from './components/ManualCalculator';
+import { VCenterIntegration } from './components/VCenterIntegration';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('analyzer');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('calculator');
   const [virtualMachines, setVirtualMachines] = useState<VirtualMachine[]>(MOCK_VMS);
   
   // Default to app-backend-worker-01 with 1200ms, 300s, 4 vCPU (exact match for screenshot values)
@@ -108,6 +110,15 @@ export default function App() {
 
         {/* Main Content Body */}
         <main className="pt-20 px-8 flex-1">
+          {activeTab === 'calculator' && <ManualCalculator />}
+          
+          {activeTab === 'vcenter' && (
+            <VCenterIntegration 
+              onSelectVm={setSelectedVm} 
+              onNavigateAnalyzer={() => setActiveTab('analyzer')} 
+            />
+          )}
+
           {activeTab === 'analyzer' && (
             <AnalyzerView
               currentVm={selectedVm}

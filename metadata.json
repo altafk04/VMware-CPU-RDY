@@ -2,5 +2,7 @@
   "name": "CPU Analyzer",
   "description": "vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic Suite",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
