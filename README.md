@@ -1,12 +1,14 @@
 # CPU Analyzer - VMware CPU RDY Analysis Tool
 
-A vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic Suite powered by Google Gemini AI. This tool helps analyze CPU Ready time metrics and provides performance diagnostic recommendations for VMware virtual machines.
+A vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic Suite powered by Google Gemini AI. This tool helps analyze CPU Ready time metrics and provides performance diagnostic insights and recommendations.
 
 ## 📋 Table of Contents
 
 - [Project Overview](#project-overview)
 - [Getting Started](#getting-started)
 - [System Requirements](#system-requirements)
+- [Git Installation](#git-installation)
+- [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
@@ -22,7 +24,7 @@ A vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic 
 
 ## Project Overview
 
-The **CPU Analyzer** is a web-based application designed to help VMware administrators and DevOps engineers analyze CPU Ready (CPU RDY) metrics and performance contention in their virtualized environments. 
+The **CPU Analyzer** is a web-based application designed to help VMware administrators and DevOps engineers analyze CPU Ready (CPU RDY) metrics and performance contention in their virtualized environments.
 
 ### Key Features
 
@@ -53,38 +55,323 @@ The **CPU Analyzer** is a web-based application designed to help VMware administ
 
 ---
 
+## Git Installation
+
+### Installing Git
+
+Git is essential for cloning the repository. Follow the instructions for your operating system:
+
+#### **Windows**
+
+**Option 1: Using Git for Windows (Recommended)**
+1. Visit [git-scm.com](https://git-scm.com/download/win)
+2. Download the latest installer
+3. Run the installer and follow the default prompts
+4. Open Command Prompt or PowerShell
+5. Verify installation:
+   ```bash
+   git --version
+   ```
+
+**Option 2: Using Chocolatey**
+```bash
+choco install git
+```
+
+**Option 3: Using Windows Package Manager**
+```bash
+winget install --id Git.Git -e --latest
+```
+
+#### **macOS**
+
+**Option 1: Using Homebrew (Recommended)**
+```bash
+# Install Homebrew first if not installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Git
+brew install git
+```
+
+**Option 2: Using MacPorts**
+```bash
+sudo port install git +svn +doc +bash_completion +gitweb
+```
+
+**Option 3: Using Xcode Command Line Tools**
+```bash
+xcode-select --install
+```
+
+**Verify installation:**
+```bash
+git --version
+```
+
+#### **Linux**
+
+**Ubuntu/Debian**
+```bash
+sudo apt update
+sudo apt install git
+```
+
+**Fedora/RHEL/CentOS**
+```bash
+sudo dnf install git
+```
+
+**Arch Linux**
+```bash
+sudo pacman -S git
+```
+
+**Verify installation:**
+```bash
+git --version
+```
+
+### Configure Git (After Installation)
+
+After installing Git, configure your identity:
+
+```bash
+# Set your name
+git config --global user.name "Your Name"
+
+# Set your email
+git config --global user.email "your.email@example.com"
+
+# View your configuration
+git config --global --list
+```
+
+---
+
+## Dependencies
+
+### Project Dependencies
+
+This project uses the following key dependencies. All are specified in `package.json`:
+
+#### **Core UI Framework**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `react` | ^19.0.1 | UI framework for building interactive components |
+| `react-dom` | ^19.0.1 | React DOM rendering for web applications |
+| `typescript` | ~5.8.2 | TypeScript for type-safe JavaScript development |
+
+#### **Build & Development Tools**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `vite` | ^6.2.3 | Modern build tool and dev server |
+| `@vitejs/plugin-react` | ^5.0.4 | React plugin for Vite |
+| `esbuild` | ^0.25.0 | JavaScript bundler used by Vite |
+| `tsx` | ^4.21.0 | TypeScript executor for Node.js |
+
+#### **Styling & UI**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `@tailwindcss/vite` | ^4.1.14 | TailwindCSS Vite integration |
+| `tailwindcss` | ^4.1.14 | Utility-first CSS framework |
+| `autoprefixer` | ^10.4.21 | PostCSS plugin for vendor prefixes |
+| `lucide-react` | ^0.546.0 | Beautiful icon library for React |
+
+#### **Data Visualization**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `recharts` | ^3.10.1 | Composable charting library for React |
+
+#### **Animation**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `motion` | ^12.23.24 | Animation library for web and React |
+
+#### **Backend & API**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `express` | ^4.21.2 | Node.js web application framework |
+| `@google/genai` | ^2.4.0 | Google Gemini AI API client |
+| `dotenv` | ^17.2.3 | Load environment variables from .env files |
+
+#### **Development Dependencies**
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `@types/node` | ^22.14.0 | TypeScript type definitions for Node.js |
+| `@types/express` | ^4.17.21 | TypeScript type definitions for Express |
+
+### Total Dependency Count
+- **Direct Dependencies**: 12
+- **Dev Dependencies**: 8
+- **Total**: 20 packages
+
+### Dependency Tree
+
+```
+VMware-CPU-RDY/
+├── React Core
+│   ├── react@^19.0.1
+│   ├── react-dom@^19.0.1
+│   └── @vitejs/plugin-react@^5.0.4
+│
+├── Build & Tooling
+│   ├── vite@^6.2.3
+│   ├── esbuild@^0.25.0
+│   ├── tsx@^4.21.0
+│   └── typescript@~5.8.2
+│
+├── Styling
+│   ├── @tailwindcss/vite@^4.1.14
+│   ├── tailwindcss@^4.1.14
+│   ├── autoprefixer@^10.4.21
+│   └── lucide-react@^0.546.0
+│
+├── Data & Visualization
+│   └── recharts@^3.10.1
+│
+├── Animation
+│   └── motion@^12.23.24
+│
+├── Backend
+│   ├── express@^4.21.2
+│   └── dotenv@^17.2.3
+│
+└── AI Integration
+    └── @google/genai@^2.4.0
+```
+
+### Dependency Installation Order
+
+The package manager will handle installation order automatically. When you run `bun install` or `npm install`, dependencies are installed in the following categories:
+
+1. **Production dependencies** (required for runtime)
+2. **Development dependencies** (required for development)
+3. **Lock file** is generated to ensure consistent versions
+
+---
+
 ## Installation
 
 ### 1. Clone the Repository
+
+Before cloning, ensure Git is installed. Then run:
 
 ```bash
 git clone https://github.com/altafk04/VMware-CPU-RDY.git
 cd VMware-CPU-RDY
 ```
 
-### 2. Install Dependencies
+**Clone Options:**
 
-Using Bun (recommended):
+```bash
+# Clone with depth (faster for large repos)
+git clone --depth 1 https://github.com/altafk04/VMware-CPU-RDY.git
+
+# Clone to a specific directory
+git clone https://github.com/altafk04/VMware-CPU-RDY.git my-project-name
+
+# Clone with branch
+git clone -b main https://github.com/altafk04/VMware-CPU-RDY.git
+```
+
+### 2. Install Node.js and Package Manager
+
+**Install Node.js** (if not already installed):
+
+- **Windows/macOS**: Download from [nodejs.org](https://nodejs.org/) (LTS version recommended)
+- **Linux**: Use your package manager (see Git installation section for commands)
+
+**Install Bun** (recommended package manager):
+```bash
+# Using npm
+npm install -g bun
+
+# Using curl
+curl -fsSL https://bun.sh/install | bash
+
+# Using Homebrew (macOS)
+brew install oven-sh/bun/bun
+```
+
+**Or use npm/yarn** (already bundled with Node.js):
+```bash
+# Verify npm
+npm --version
+
+# Verify yarn (if installed)
+yarn --version
+```
+
+### 3. Install Project Dependencies
+
+Navigate to the project directory and install all dependencies:
+
+**Using Bun (recommended):**
 ```bash
 bun install
 ```
 
-Or using npm:
+**Or using npm:**
 ```bash
 npm install
 ```
 
-Or using yarn:
+**Or using yarn:**
 ```bash
 yarn install
 ```
 
-### 3. Verify Installation
+This command will:
+- Read `package.json`
+- Download all dependencies (production and dev)
+- Generate a lock file (`bun.lock`, `package-lock.json`, or `yarn.lock`)
+- Install all packages in `node_modules/`
+
+### 4. Verify Installation
+
+Verify that all tools are correctly installed:
 
 ```bash
-bun --version  # or npm --version / yarn --version
+# Check Node.js version (v18.0.0+)
 node --version
+
+# Check npm version (v6.0.0+)
+npm --version
+
+# Check Bun version (v1.0.0+)
+bun --version
+
+# Check Git version
+git --version
+
+# List installed project dependencies
+bun ls
+# or
+npm list --depth=0
 ```
+
+### 5. Expected Output
+
+After successful installation, you should see:
+```
+✓ Node.js v18.x.x or higher
+✓ npm/Bun/Yarn installed
+✓ Git configured
+✓ node_modules/ directory created
+✓ Package lock file generated
+✓ All dependencies listed in package.json installed
+```
+
+### Complete Installation Checklist
+
+- [ ] Git installed and configured
+- [ ] Node.js v18.0.0+ installed
+- [ ] Package manager (Bun/npm/yarn) installed
+- [ ] Repository cloned successfully
+- [ ] All dependencies installed (`bun install` completed)
+- [ ] Environment variables configured (see Configuration section)
+- [ ] API keys obtained (see Prerequisites section)
 
 ---
 
@@ -171,12 +458,14 @@ bun run clean
 
 **Steps**:
 1. Clone the repository to your deployment environment
-2. Install dependencies using `bun install`
-3. Configure environment variables in `.env.local`
-4. Verify Gemini API key validity
-5. Test API connectivity: `bun run lint`
-6. Start the development server: `bun run dev`
-7. Verify the application loads at http://localhost:3000
+2. Install Git if not already installed
+3. Install Node.js v18.0.0 or higher
+4. Install dependencies using `bun install`
+5. Configure environment variables in `.env.local`
+6. Verify Gemini API key validity
+7. Test API connectivity: `bun run lint`
+8. Start the development server: `bun run dev`
+9. Verify the application loads at http://localhost:3000
 
 **Validation**: Application loads without errors and UI is accessible
 
@@ -279,6 +568,9 @@ bun run clean
 
 | Issue | Cause | Solution |
 |-------|-------|----------|
+| Git not found | Git not installed | Install Git from git-scm.com or package manager |
+| Cannot clone repo | SSH key issues | Use HTTPS URL or configure SSH keys |
+| Module not found | Dependencies not installed | Run `bun install` or `npm install` |
 | API Key Error | Invalid or missing GEMINI_API_KEY | Verify API key in Google Cloud Console |
 | Connection Timeout | Network issues or service down | Check APP_URL configuration |
 | Build Failures | Dependency issues | Run `bun install` and `bun run clean` |
@@ -286,12 +578,14 @@ bun run clean
 | Type Errors | TypeScript compilation issues | Run `bun run lint` and fix errors |
 
 **Troubleshooting Steps**:
-1. Check environment variables: `echo $GEMINI_API_KEY`
-2. Verify network connectivity
-3. Check application logs
-4. Review error messages
-5. Test with sample data
-6. Restart application services
+1. Verify Git is installed: `git --version`
+2. Verify Node.js is installed: `node --version`
+3. Check environment variables: `echo $GEMINI_API_KEY`
+4. Verify network connectivity
+5. Check application logs
+6. Review error messages
+7. Test with sample data
+8. Restart application services
 
 **Escalation**:
 - Contact Google Cloud Support for API issues
@@ -382,6 +676,12 @@ bun run lint
 
 # Clean build artifacts
 bun run clean
+
+# Update dependencies
+bun update
+
+# List dependencies
+bun ls
 ```
 
 ### Code Style
@@ -427,8 +727,11 @@ GEMINI_API_KEY=<your_prod_key>
 
 ### Common Issues and Solutions
 
+**Issue**: "git: command not found" or "Git is not installed"
+- **Solution**: Install Git from [git-scm.com](https://git-scm.com) or your OS package manager
+
 **Issue**: "Cannot find module '@google/genai'"
-- **Solution**: Run `bun install` to install dependencies
+- **Solution**: Run `bun install` to install all dependencies
 
 **Issue**: "Gemini API key is invalid"
 - **Solution**: Verify your API key in Google Cloud Console
@@ -492,8 +795,15 @@ This project is open source. Please check the LICENSE file for details.
 ### Essential Commands
 
 ```bash
+# Git
+git clone https://github.com/altafk04/VMware-CPU-RDY.git
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
 # Installation
-bun install
+bun install          # Install all dependencies
+bun update          # Update all dependencies
+bun ls              # List installed packages
 
 # Development
 bun run dev          # Start dev server at http://localhost:3000
@@ -510,9 +820,20 @@ bun run clean        # Remove build artifacts
 - `package.json` - Project dependencies and scripts
 - `src/` - Application source code
 - `dist/` - Production build output
+- `node_modules/` - Installed dependencies
+
+### Dependency Installation Troubleshooting
+
+| Error | Solution |
+|-------|----------|
+| `npm ERR! code EACCES` | Use `sudo` or fix npm permissions |
+| `ENOTFOUND registry.npmjs.org` | Check internet connection and npm registry |
+| `Module not found` | Run `bun install` or `npm install` again |
+| `Package-lock.json conflicts` | Delete `node_modules/` and lock file, then reinstall |
 
 ---
 
 **Last Updated**: 2026-08-22
-**Version**: 1.0.0
+**Version**: 1.0.1
 **Status**: Active
+**Maintainer**: [altafk04](https://github.com/altafk04)
