@@ -13,7 +13,7 @@
     "update:bun": "bun update",
     "update:npm": "npm update",
     "update:yarn": "yarn upgrade",
-    "update": "npm run update:npm",
+    "update": "bun update",
     "uninstall:posix": "rm -rf node_modules bun.lock package-lock.json yarn.lock && echo \"Removed node_modules and lock files\"",
     "uninstall:win": "powershell -Command \"Remove-Item -Recurse -Force node_modules, package-lock.json, yarn.lock, bun.lock; Write-Host 'Removed node_modules and lock files'\"",
     "uninstall": "npm run uninstall:posix || npm run uninstall:win"
