@@ -1,6 +1,6 @@
 # CPU Analyzer - VMware CPU RDY Analysis Tool
 
-A vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic Suite powered by Google Gemini AI. This tool helps analyze CPU Ready time metrics and provides performance diagnostic insights and recommendations.
+A vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic Suite powered by Google Gemini AI. This tool helps analyze CPU Ready time metrics and provides performance diagnostic[...]
 
 ## 📋 Table of Contents
 
@@ -24,7 +24,7 @@ A vSphere %RDY CPU Contention Analyzer & Virtual Machine Performance Diagnostic 
 
 ## Project Overview
 
-The **CPU Analyzer** is a web-based application designed to help VMware administrators and DevOps engineers analyze CPU Ready (CPU RDY) metrics and performance contention in their virtualized environments.
+The **CPU Analyzer** is a web-based application designed to help VMware administrators and DevOps engineers analyze CPU Ready (CPU RDY) metrics and performance contention in their virtualized envi[...]
 
 ### Key Features
 
@@ -684,13 +684,81 @@ bun update
 bun ls
 ```
 
-### Code Style
+---
 
-- Use TypeScript for type safety
-- Follow React best practices
-- Use functional components and hooks
-- Style with TailwindCSS utilities
-- Keep components modular and reusable
+## Uninstall & Update Commands
+
+This project supports common package managers (Bun, npm, yarn). Use the commands below to update or uninstall dependencies and to remove installed artifacts.
+
+Uninstall (remove installed dependencies and lockfiles):
+
+- Bun / macOS / Linux (POSIX shells):
+```bash
+rm -rf node_modules bun.lock package-lock.json yarn.lock && echo "Removed node_modules and lock files"
+```
+
+- npm / macOS / Linux (POSIX shells):
+```bash
+rm -rf node_modules package-lock.json && echo "Removed node_modules and package-lock.json"
+```
+
+- yarn / macOS / Linux (POSIX shells):
+```bash
+rm -rf node_modules yarn.lock && echo "Removed node_modules and yarn.lock"
+```
+
+- Windows (PowerShell):
+```powershell
+Remove-Item -Recurse -Force node_modules, package-lock.json, yarn.lock, bun.lock
+Write-Host "Removed node_modules and lock files"
+```
+
+Run the repository-provided uninstall script (if you prefer the npm/bun script):
+
+```bash
+# Using Bun
+bun run uninstall
+
+# Using npm
+npm run uninstall
+
+# Using yarn
+yarn run uninstall
+```
+
+Update (upgrade dependencies):
+
+- Bun (recommended):
+```bash
+bun update
+```
+
+- npm:
+```bash
+npm update
+```
+
+- yarn:
+```bash
+yarn upgrade
+```
+
+Run the repository-provided update script:
+
+```bash
+# Using Bun
+bun run update
+
+# Using npm
+npm run update
+
+# Using yarn
+yarn run update
+```
+
+Notes:
+- Removing `node_modules` and lock files is destructive and will require reinstalling dependencies (`bun install` / `npm install` / `yarn install`) to restore the project.
+- For cross-platform scripting in CI or dev environments, prefer platform-aware tools like `rimraf` (not included here) or run commands inside a POSIX shell.
 
 ---
 
