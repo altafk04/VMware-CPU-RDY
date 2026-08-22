@@ -14,8 +14,8 @@
     "update:npm": "npm update",
     "update:yarn": "yarn upgrade",
     "update": "bun update",
-    "uninstall:posix": "rm -rf node_modules bun.lock package-lock.json yarn.lock && echo \"Removed node_modules and lock files\"",
-    "uninstall:win": "powershell -Command \"Remove-Item -Recurse -Force node_modules, package-lock.json, yarn.lock, bun.lock; Write-Host 'Removed node_modules and lock files'\"",
+    "uninstall:posix": "sh ./scripts/uninstall.sh",
+    "uninstall:win": "powershell -ExecutionPolicy Bypass -File ./scripts/uninstall.ps1",
     "uninstall": "npm run uninstall:posix || npm run uninstall:win"
   },
   "dependencies": {
